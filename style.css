@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+* {
+    font-family: 'Dongle', sans-serif;
+}
+
+body{
+    margin:0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* 전체 레이아웃 grid*/
+#container {
+    display: grid;
+    justify-items:center;
+    align-items:flex-start;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: 100vh;
+    grid-row: 1 / span 2;
+}
+
+
+/* 우측 소개페이지 */
+.introduce {
+    color: #768591;
+    font-size: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    /* flex-direction:row; */
+}
+ul{
+    padding: 0;
+    list-style:none;
+    display: flex;
+    align-items: center;
+}
+.introduce__title {
+    min-width: 150px; /* .introduce__txt의 border 값이 비뚤게 정렬되는 현상 해결*/
+    text-align: center;
+}
+.introduce__txt{
+    border-left: 5px solid rgb(254 229 77);
+    padding-left: 10px;
+    max-width: 800px;
+    min-width: 400px;
+}
+
+
+/* 카카오톡 화면 */
+header{
+    float:left;
+    position: fixed;
+    width: 400px;
+    left: 10%;
+    top:10%;
+    background-color: #afc1cf;
+}
+h1 {
+    border-bottom: 1px solid white;
+    margin: 5px;
+    height: 60px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kakao {
+    display: grid;
+    border: none;
+    border-radius: 10px;
+    /* height: 80vh; */
+    height: 600px;
+}
+.kakao__typing {
+    margin: 0;
+    border: 0;
+    /* background-color: white; */
+    height: 42px;
+    width: 401px;
+    /* display:flex;
+    justify-content: end;
+    align-content: flex-end; */
+}
+.kakao__typingArea{
+    background-color: white;
+}
+button {
+    border: none;
+    border-radius: 0px 0px 5px 0px;
+    background-color: rgb(254 229 77);
+    /* height: 40px; */
+    width: 80px;
+    font-size: 30px;
+    float: right;
+}
+
+/* 카카오톡 말풍선 */
+p{
+    display: flex;
+    margin: 0px 10px 10px;
+    opacity: 0;
+	border-radius: .4em; /*둥근테두리*/
+    height: fit-content;
+    width: fit-content;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 7px 0px 7px;
+    font-size: 25px;
+    background-color: rgb(254 229 77);
+    animation: animation forwards;
+}
+.kakao__txt1{animation-delay: 1s;}
+.kakao__txt2{animation-delay: 3s;}
+.kakao__txt3{animation-delay: 5s;}
+.kakao__txt4{animation-delay: 7s;}
+.kakao__txt5{animation-delay: 9s;}
+.kakao__txt6{animation-delay: 11s;}
+.kakao__txt7{animation-delay: 13s;}
+.kakao__txt8{animation-delay: 15s;}
+
+footer{
+    position: fixed;
+    bottom : 0;
+    text-align: center;
+    width: 100vw;
+    height: 50px;
+    border-top: 1px solid #afc1cf;
+    background-color: white;
+}
+img {
+    width: 35px;
+    height: 38px;
+    margin: 5px 10px 0;
+}
+a{
+    color: white;
+}
+
+/* 말풍선 시간차 팝업 애니메이션 */
+@keyframes animation{
+    to {
+        opacity: 1;
+    }
+}
+
+/* 화면 높이가 낮으면 배경색이 짤리는 현상 방지, 최소 높이 지정 */
+@media (max-height:700px){
+    .header{
+        min-height: 601px;
+    }
+    .kakao{
+        min-height: 601px;
+    }
+}
+
+/* 폭이 좁아지면 레이아웃이 행으로 정렬, 카카오톡 화면은 화면 높이로 지정*/
+@media(max-width: 1100px){
+    #container {
+        display: block; 카톡 화면 중앙정렬
+    }
+    .kakao{
+        min-height: 100vh;
+        margin-left: 80px;
+    }
+    .grid_empty_space{
+        min-height: 100vh;
+        width: 10px;
+    }
+    .introduce {
+        font-size: 30px;
+    }
+    header{
+        position:static; /* 카톡 fixed 효과제거 */
+    }
+}
