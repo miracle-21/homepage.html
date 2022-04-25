@@ -149,7 +149,7 @@ a{
     }
 }
 
-/* 화면 높이가 낮으면 배경색이 짤리는 현상 방지, 최소 높이 지정 */
+/* 화면 높이가 낮으면 배경색이 짤려서 최소 높이 지정*/
 @media (max-height:700px){
     .header{
         min-height: 601px;
@@ -179,3 +179,13 @@ a{
         position:static; /* 카톡 fixed 효과제거 */
     }
 }
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+  }
