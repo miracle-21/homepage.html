@@ -31,8 +31,6 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* align-items: center; */
-    /* flex-direction:row; */
 }
 ul{
     padding: 0;
@@ -74,18 +72,13 @@ h1 {
     display: grid;
     border: none;
     border-radius: 10px;
-    /* height: 80vh; */
     height: 600px;
 }
 .kakao__typing {
     margin: 0;
     border: 0;
-    /* background-color: white; */
     height: 42px;
     width: 401px;
-    /* display:flex;
-    justify-content: end;
-    align-content: flex-end; */
 }
 .kakao__typingArea{
     background-color: white;
@@ -94,7 +87,6 @@ button {
     border: none;
     border-radius: 0px 0px 5px 0px;
     background-color: rgb(254 229 77);
-    /* height: 40px; */
     width: 80px;
     font-size: 30px;
     float: right;
